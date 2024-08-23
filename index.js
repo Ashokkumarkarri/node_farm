@@ -1,10 +1,11 @@
 const fs=require('fs');
 const http=require('http');
+// const url=require('url');
 
-//reading a File : Blocking, synchronous way
-const text=fs.readFileSync('./txt/input.txt','utf-8');
-console.log(text)
 
+//SERVER
+const data=fs.readFileSync('./dev-data/data.json','utf-8');
+const dataObjs=JSON.parse(data) // convert JSON string into a JavaScript object
 
 const server=http.createServer((req,res)=>{
     // console.log(req);
@@ -14,8 +15,12 @@ const server=http.createServer((req,res)=>{
     if(pathName==='/' || pathName === '/overview'){
         res.end('This is OverView')
     }else if (pathName==='/product'){
-        res.end('This is Product')
-    }else{
+        res.end('This is Product')  
+    }else if(pathName==='/api'){
+        res.writeHead(200,{'content-type':'application/json'})
+        res.end(data) 
+    }
+    else{
         res.writeHead(404,{
             'Content-type':'text/html',
             'my-own-header':'hellow-world'
