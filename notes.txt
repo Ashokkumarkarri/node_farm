@@ -1,1 +1,7 @@
-created server using http.
+
+Created server and Implemented different routs.
+
+
+File Reading: The code reads the content of a file synchronously.
+HTTP Server: It creates a simple server that handles different URL paths and responds accordingly.
+Error Handling: If a requested URL doesn't match the predefined routes, it responds with a 404 error.
