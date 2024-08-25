@@ -1,9 +1,1 @@
-Implemented simple API.
-
-we put "const data=fs.readFileSync('./dev-data/data.json','utf-8');" outside the routing cause we do not 
-want our application fetch the data from the database everytime we refresh.
-thats why we put this outside the routing.
-
-By placing const data = fs.readFileSync('./dev-data/data.json', 'utf-8'); outside the routing logic, 
-you ensure that the file is read only once when the server starts. 
-This approach prevents the application from reading the file from the disk on every request, which can be inefficient and slow.
+added back button function from product to overview.
